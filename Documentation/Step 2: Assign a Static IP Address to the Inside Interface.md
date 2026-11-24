@@ -12,7 +12,7 @@ VM: Ubuntu Server 26.04.1 LTS (ARM64), 2 GB RAM, 2 CPU cores, 20 GB disk, with a
 All screenshots captured from the Terminal interface. 
 
 ---
-## Goal 2: Give `ep0s2` a permanent static address so the firewall has a stable IP that can be used as a gateway.   
+## Step 2: Give `ep0s2` a permanent static address so the firewall has a stable IP that can be used as a gateway.   
 
 ![Screenshot 03 showing ls /etc/netplan output](../Lab%20Screenshots/Screenshot%2003%20-%20ls%20etc%20netplan.png)
 
