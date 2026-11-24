@@ -12,7 +12,7 @@ Build a small segmented network behind a Linux-based firewall, and document each
 - Firewall VM: 2GB RAM, 2 CPU cores, 20GB disk
 - Networking: one Shared Network adapter (outside) and one Host Only adapter (inside)
 
-- ## PROGRESS
+## PROGRESS
 - [x] Step 1: Build the VM, verify connectivity, apply updates, add a second network adapter
 - [x] Step 2: Assign a static IP address to the inside interface
 - [ ] Step 3: Enable IP forwarding
