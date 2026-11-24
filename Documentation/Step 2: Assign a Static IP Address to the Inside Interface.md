@@ -11,9 +11,7 @@ VM: Ubuntu Server 26.04.1 LTS (ARM64), 2 GB RAM, 2 CPU cores, 20 GB disk, with a
 
 All screenshots captured from the Terminal interface. 
 
-22 November 2026
-
-**Goal 2: Give** `ep0s2` **a permanent static address so the firewall has a stable IP that can be used as a gateway.**   
+**Goal 2: Give `ep0s2` a permanent static address so the firewall has a stable IP that can be used as a gateway.**   
 ---
 
 **![][image1]Command:** `ls /etc/netplan`  
