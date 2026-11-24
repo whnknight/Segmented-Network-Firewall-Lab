@@ -1,3 +1,5 @@
+**Date:** 21 November 2026
+
 # Segmented Network & Firewall Lab
 
 *A virtualized Linux firewall with inside/outside segmentation, built and documented on an M1 Mac using UTM and Ubuntu Server.*
@@ -7,8 +9,6 @@
 Built in UTM on an M1 MacBook.
 VM: Ubuntu Server 26.04.1 LTS (ARM64), 2 GB RAM, 2 CPU cores, 20 GB disk, with an initial Shared Network adapter.
 
-
-**Date:** 21 November 2026
 
 ---
 
