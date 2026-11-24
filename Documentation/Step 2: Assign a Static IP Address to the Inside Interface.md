@@ -63,33 +63,44 @@ All screenshots captured from the Terminal interface.
 **Conclusion:** The command is designed to run silently, so the lack of output didn’t confirm success. It was verified in the next step with `ls /etc/netplan`, which showed both `00-installer-config.yaml` and `60-lab-inside.yaml`. The file exists, but the configuration has **not been applied yet**, so `enp0s2` is still on its DHCP address.<br>
 
 </small>
+   
+---
+
+### Command:`sudo cat /etc/netplan/60-lab-inside.yaml`
+
+<small> 
+  
+**Purpose:** Verifies the new netplan file contains intended configuration before applied. `sudo` runs the command with administrator rights (it prompts for the account password). `cat` prints a file’s contents. `/etc/netplan/60-lab-inside.yaml` is the full path to the file. Looking to confirm enp0s2, `dhcp4: false` (ensures that it is not competing with a static address) and the IP address matches 192.168.128.2/24.<br>  
+**Result:** The file contents matched the intended configuration. The MAC address (`0e:67:4c:75:9f:c4`) corresponds to `enp0s2` as shown in the earlier `ip a` output. DHCP is disabled for both IPv4 and IPv6, the static address 192.168.128.2/24 is defined, and the indentation is correct.<br>  
+**Conclusion:** The configuration file is correct and ready to be applied. Verifying the file before applying it reduces the risk of a YAML error disrupting the interface.<br>
+
+</small>
 
 ---
 
-![][image2]  
+### Command: `sudo chmod 600 /etc/netplan/60-lab-inside.yaml` 
+
+<small>
+  
+**Purpose:** Restricts new netplan file so only root access can have read & write permissions. `chmod` changes a file’s permissions. `600` is the permission value with the three digits representing the owner, group, and everyone else. Each digit is the sum total of read (4), write (2), execute (1), and no access (0).<br>   
+**Result:** No output.<br>
+**Conclusion:** No output will be verified in the next step.<br>
+
+</small>
+
 ---
 
-**![][image3]**  
+### Command: `ls -l /etc/netplan`
+
+<small>
+  
+**Purpose:** Verifies the permission change took effect by listing the files in netplan folder along with read, write, and execute permissions for the owner, group, and other.<br>   
+**Result:** 60-lab-inside.yaml shows \-rw-------. \- indicates this is a file. rw- indicates that the owner has read and write permissions but does not have the ability to execute. \--- is listed for both the group and for everyone, indicating that read, write, or execute permissions are not allowed.<br>  
+**Conclusion:** The file is protected for root users only to read and modify the network. This applies the principle of least privilege.<br>
+
+</small>
 ---
 
-**Command:** `sudo cat /etc/netplan/60-lab-inside.yaml`  
-**Purpose:** Verifies the new netplan file contains intended configuration before applied.  
-**Breakdown:** `sudo` runs the command with administrator rights (it prompts for the account password). `cat` prints a file’s contents. `/etc/netplan/60-lab-inside.yaml` is the full path to the file. Looking to confirm enp0s2, `dhcp4: false` (ensures that it is not competing with a static address) and the IP address matches 192.168.128.2/24.  
-**Result:** The file contents matched the intended configuration. The MAC address (`0e:67:4c:75:9f:c4`) corresponds to `enp0s2` as shown in the earlier `ip a` output. DHCP is disabled for both IPv4 and IPv6, the static address 192.168.128.2/24 is defined, and the indentation is correct.  
-**Conclusion:** The configuration file is correct and ready to be applied. Verifying the file before applying it reduces the risk of a YAML error disrupting the interface.  
----
-
-![][image4]  
-**Command:** `sudo chmod 600 /etc/netplan/60-lab-inside.yaml`  
-**Purpose:** Restricts new netplan file so only root access can have read & write permissions. `chmod` changes a file’s permissions. `600` is the permission value with the three digits representing the owner, group, and everyone else. Each digit is the sum total of read (4), write (2), execute (1), and no access (0).   
-**Result:** No output.   
-**Conclusion:** No output will be verified in the next step.  
----
-
-**Command:** `ls -l /etc/netplan`  
-**Purpose:** Verifies the permission change took effect by listing the files in netplan folder along with read, write, and execute permissions for the owner, group, and other.   
-**Result:** 60-lab-inside.yaml shows \-rw-------. \- indicates this is a file. rw- indicates that the owner has read and write permissions but does not have the ability to execute. \--- is listed for both the group and for everyone, indicating that read, write, or execute permissions are not allowed.  
-**Conclusion:** The file is protected for root users only to read and modify the network. This applies the principle of least privilege.   
 23 November 2026
 
 ![][image5]  
