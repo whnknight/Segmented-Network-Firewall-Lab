@@ -13,7 +13,6 @@ All screenshots captured from the Terminal interface.
 
 ---
 ## Goal 2: Give `ep0s2` a permanent static address so the firewall has a stable IP that can be used as a gateway.   
----
 
 ![ip a, ping, and apt update/upgrade output in the VM terminal](../Lab%20Screenshots/Screenshot%2001%20-%20ip%20a%20verification.png)
 
