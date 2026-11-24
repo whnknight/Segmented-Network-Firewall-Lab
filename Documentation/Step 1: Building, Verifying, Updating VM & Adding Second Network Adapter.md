@@ -43,7 +43,7 @@ All screenshots captured from the Terminal interface.
 **Result:** Updates installed successfully. Several services (e.g., networkd-dispatcher, systemd-logind) had restarts deferred until the next reboot.  
 **Conclusion:** A reboot was needed for all services to run their updated versions, so I shut the VM down cleanly with `sudo shutdown now`.
 
-![ip a, ping, and apt update/upgrade output in the VM terminal](../Lab Screenshots/Screenshot 01 - ip a verification.png)
+![ip a, ping, and apt update/upgrade output in the VM terminal](../Lab-Screenshots/Screenshot-01-ip-a-verification.png)
 
 *`ip a`, `ping -c 4 google.com`, and `apt update && apt upgrade -y`, run after the updates were complete. Both interfaces are UP, the ping shows 4 of 4 replies with 0% loss, and apt reports nothing left to upgrade.*
 
