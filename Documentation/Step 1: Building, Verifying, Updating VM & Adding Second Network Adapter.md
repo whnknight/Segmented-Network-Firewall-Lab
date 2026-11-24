@@ -43,7 +43,7 @@ All screenshots captured from the Terminal interface.
 **Result:** Updates installed successfully. Several services (e.g., networkd-dispatcher, systemd-logind) had restarts deferred until the next reboot.  
 **Conclusion:** A reboot was needed for all services to run their updated versions, so I shut the VM down cleanly with `sudo shutdown now`.
 
-![ip a, ping, and apt update/upgrade output in the VM terminal](../Lab-Screenshots/Screenshot-01-ip-a-verification.png)
+![ip a, ping, and apt update/upgrade output in the VM terminal](../Lab%20Screenshots/Screenshot%2001%20-%20ip%20a%20verification.png)
 
 *`ip a`, `ping -c 4 google.com`, and `apt update && apt upgrade -y`, run after the updates were complete. Both interfaces are UP, the ping shows 4 of 4 replies with 0% loss, and apt reports nothing left to upgrade.*
 
@@ -58,6 +58,6 @@ All screenshots captured from the Terminal interface.
 **Verification:** Immediately after the fix, `df -h /` showed 17 GB total, 11 GB available, 33% used. The verification screenshot below was taken later and shows 12 GB available, 29% used.  
 **Conclusion:** The default install left roughly half of the disk unused. Expanding the volume gave the firewall VM headroom for logs, packages, and tooling, and the process confirmed how to read and extend LVM storage.
 
-![df -h / showing the 17 GB root filesystem](../screenshots/02-df-root-filesystem-after-fix.png)
+![df -h / showing the 17 GB root filesystem](../Lab%20Screenshots/Screenshot%2002%20-%20df%20root%20filesystem%20post%20fix.png)
 
 *`df -h /` after the fix: the root filesystem is 17 GB.*
