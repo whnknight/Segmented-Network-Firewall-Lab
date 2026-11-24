@@ -1,5 +1,5 @@
 # Segmented-Network-Firewall-Lab
-A virtualized Linux firewall with inside/outside segmentation, built and documented on an M1 Mac using UTM and Ubuntu Server.
+A virtualized Linux firewall with inside/outside segmentation, built and documented on an M1 Mac using UTM and Ubuntu Server. All screenshots captured from macOS Terminal interface.
 * NOTE FROM THE AUTHOR: some screenshots taken after to show verification of completed steps.
 
 ## GOAL
