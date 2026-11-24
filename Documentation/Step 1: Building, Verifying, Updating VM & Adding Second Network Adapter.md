@@ -8,13 +8,13 @@
 
 Built in UTM on an M1 MacBook.
 VM: Ubuntu Server 26.04.1 LTS (ARM64), 2 GB RAM, 2 CPU cores, 20 GB disk, with an initial Shared Network adapter.
+> **Note from the author:** The screenshots in this section verify the success of the listed commands. They were captured after the processes were completed.
 
 
 ---
 
 ## Goal 1: Build the VM, verify connectivity, apply updates, add a second network adapter
 
-> **Note from the author:** The screenshots in this section verify the success of the listed commands. They were captured after the processes were completed.
 
 ### Command: `ip a`
 
