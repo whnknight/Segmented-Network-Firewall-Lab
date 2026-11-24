@@ -18,9 +18,9 @@ All screenshots captured from the Terminal interface.
 ### Command: `ls /etc/netplan`
 
 **Purpose:** Lists the network configuration files on the system.  
-**Breakdown:** `ls` lists a folder's contents. `/etc/netplan` is the path, `/` is the root of the filesystem. `etc` is where system configuration lives and `netplan` is Ubuntu's network configuration folder.  
-**Result:** One file, `00-installer-config.yaml`. 
-**Conclusion:** Only the installer-generated network configuration exists -- no custom network configuration has been added yet. 
+**Breakdown:** `ls` lists a folder’s contents. `/etc/netplan` is the path: `/` is the root of the filesystem, `etc` is where system configuration lives, and `netplan` is Ubuntu’s network configuration folder.  
+**Result:** One file, `00-installer-config.yaml`.  
+**Conclusion:** Only the installer-generated network configuration exists. No custom network configuration has been added yet. 
 ---
 
 **Command:** `sudo cat /etc/netplan/00-installer-config.yaml`  
