@@ -27,14 +27,21 @@ All screenshots captured from the Terminal interface.
 
 ---
 
-**Command:** `sudo cat /etc/netplan/00-installer-config.yaml`  
-**Purpose:** Displays the contents of the installer-generated network configuration.  
-**Breakdown:** `sudo` runs the command with administrator rights (it prompts for the account password). `cat` prints a file’s contents. `/etc/netplan/00-installer-config.yaml` is the full path to the file.  
-**Result:** The file defines only `enp0s1`: DHCP enabled for IPv4 and IPv6, matched by MAC address `b2:7c:d8:a7:c0:9f`, named `enp0s1`. It’s marked as written by `subiquity`, the Ubuntu installer. `enp0s2` isn’t defined anywhere in the file.  
-**Conclusion:** The second adapter only has an automatic default configuration. A separate netplan file is needed to give it a permanent static address.  
+### Command: `sudo cat /etc/netplan/00-installer-config.yaml`
+
+<small> 
+  
+**Purpose:** Displays the contents of the installer-generated network configuration.`sudo` runs the command with administrator rights (it prompts for the account password). `cat` prints a file’s contents. `/etc/netplan/00-installer-config.yaml` is the full path to the file.<br> 
+
+**Result:** The file defines only `enp0s1`: DHCP enabled for IPv4 and IPv6, matched by MAC address `b2:7c:d8:a7:c0:9f`, named `enp0s1`. It’s marked as written by `subiquity`, the Ubuntu installer. `enp0s2` isn’t defined anywhere in the file.<br>
+
+**Conclusion:** The second adapter only has an automatic default configuration. A separate netplan file is needed to give it a permanent static address.<br>
+
+</small>
+
 ---
 
-**Command:** `sudo tee /etc/netplan/60-lab-inside.yaml > /dev/null << 'EOF'`  
+### Command:** `sudo tee /etc/netplan/60-lab-inside.yaml > /dev/null << 'EOF'`  
 `network:`  
   `version: 2`  
   `ethernets:`  
@@ -47,9 +54,16 @@ All screenshots captured from the Terminal interface.
       `addresses:`  
         `- 192.168.128.2/24`  
 `EOF`  
-**Purpose:** Creates a new netplan configuration file that defines `enp0s2` with a static IPv4 address of 192.168.128.2/24, instead of the DHCP-assigned address it currently uses. A separate file is used so the installer’s working configuration for `enp0s1` stays untouched.  
-**Result:** No output.  
-**Conclusion:** The command is designed to run silently, so the lack of output didn’t confirm success. It was verified in the next step with `ls /etc/netplan`, which showed both `00-installer-config.yaml` and `60-lab-inside.yaml`. The file exists, but the configuration has **not been applied yet**, so `enp0s2` is still on its DHCP address.  
+
+<small>
+
+**Purpose:** Creates a new netplan configuration file that defines `enp0s2` with a static IPv4 address of 192.168.128.2/24, instead of the DHCP-assigned address it currently uses. A separate file is used so the installer’s working configuration for `enp0s1` stays untouched.<br>
+
+**Result:** No output.<br>  
+**Conclusion:** The command is designed to run silently, so the lack of output didn’t confirm success. It was verified in the next step with `ls /etc/netplan`, which showed both `00-installer-config.yaml` and `60-lab-inside.yaml`. The file exists, but the configuration has **not been applied yet**, so `enp0s2` is still on its DHCP address.<br>
+
+</small>
+
 ---
 
 ![][image2]  
