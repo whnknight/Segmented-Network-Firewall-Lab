@@ -14,7 +14,7 @@ All screenshots captured from the Terminal interface.
 **Goal 2: Give `ep0s2` a permanent static address so the firewall has a stable IP that can be used as a gateway.**   
 ---
 
-**![][image1]Command:** `ls /etc/netplan`  
+**Command: `ls /etc/netplan`  
 **Purpose:** Lists the network configuration files on the system.  
 **Breakdown:** `ls` lists a folder’s contents. `/etc/netplan` is the path: `/` is the root of the filesystem, `etc` is where system configuration lives, and `netplan` is Ubuntu’s network configuration folder.  
 **Result:** One file, `00-installer-config.yaml`.  
