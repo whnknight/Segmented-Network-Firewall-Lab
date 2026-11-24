@@ -14,7 +14,7 @@ All screenshots captured from the Terminal interface.
 ---
 ## Goal 2: Give `ep0s2` a permanent static address so the firewall has a stable IP that can be used as a gateway.   
 
-![](../Lab%20Screenshots/Screenshot%2003%20-%20ls%20:etc:netplan%.png)
+![](../Lab%20Screenshots/Screenshot%2003%20-%20ls%20etc:netplan%.png)
 
 ### Command: `ls /etc/netplan`
 
