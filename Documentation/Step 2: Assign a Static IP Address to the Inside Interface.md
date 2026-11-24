@@ -99,9 +99,10 @@ All screenshots captured from the Terminal interface.
 **Conclusion:** The file is protected for root users only to read and modify the network. This applies the principle of least privilege.<br>
 
 </small>
+
 ---
 
-23 November 2026
+**Date:** 23 November 2026
 
 ![][image5]  
 ---
